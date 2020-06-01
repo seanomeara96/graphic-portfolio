@@ -3,16 +3,17 @@ import { BrowserRouter, Route } from "react-router-dom";
 import styles from "./App.module.css";
 import Header from "../Header";
 import Footer from "../Footer";
-import Preview from "../Preview";
+import PreviewList from "../PreviewList";
 import View from "../View";
 
-export default() => {
+// App component
+export default () => {
     return (
     <div className={styles.global} >
         <Header />
              <BrowserRouter >
                 <Route exact path="/">
-                    <Preview />
+                    <PreviewList />
                 </Route>
                 <Route exact path="/:id">
                     <View />

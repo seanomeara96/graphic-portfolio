@@ -1,0 +1,18 @@
+.container{
+    position:relative;
+  }
+  .card {
+    display:inline-block;
+    height:300px;
+    width:175px;
+    background-color:#fff;
+    border-radius:10px;
+    margin:2rem;
+    box-shadow:0 0 3px 1px rgba(0,0,0,.5);
+  }
+  .back {
+    transform: rotate(15deg);
+    position:absolute;
+    top:0;
+    left:0;
+  }

@@ -3,7 +3,7 @@ import styles from "./Header.module.css";
 const Header = () => {
     return (
     <header className={styles.header} >
-        <h1 className={styles.title} >Portfolio</h1>
+        <h1 className={styles.title} >Sean's Photshop Battles</h1>
     </header>
     );
 };

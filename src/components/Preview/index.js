@@ -1,7 +1,10 @@
 import React from 'react';
 import { Link } from "react-router-dom";
 import styles from "./Preview.module.css";
-
+/*
+* Component needs images.
+* Refactor for string interpolation.
+*/
 // Preview component
 export default props => {
     return (

@@ -1,5 +1,18 @@
 import React from 'react';
-const View = props => {
-    return <div>This is a View.</div>
+import Return from "../Return";
+
+// View component
+export default props => {
+    console.log(props)
+    return (
+        <div>
+            <div>
+                <Return />
+            </div>
+            whatever text down here
+            <div>
+                <Return />
+            </div>
+        </div>
+    );
 }
-export default View;

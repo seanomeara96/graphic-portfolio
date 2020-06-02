@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter, Route } from "react-router-dom";
+import { BrowserRouter, Route, Redirect } from "react-router-dom";
 import styles from "./App.module.css";
 import Header from "../Header";
 import Footer from "../Footer";
@@ -13,13 +13,31 @@ import View from "../View";
 // Images
 const numberOfSamples = 7;
 let portfolioSamples = [];
-for (let i = 1; i <= numberOfSamples; i++) {
-    portfolioSamples.push(
-        {
-            before:`/graphic-portfolio/images/${i}/before.jpg`,
-            after:`/graphic-portfolio/images/${i}/after.jpg`,
-        }
+console.log(document)
+let devRedirect
+if (document.domain === "localhost") {
+    for (let i = 1; i <= numberOfSamples; i++) {
+        portfolioSamples.push(
+            {
+                before:`/images/${i}/before.jpg`,
+                after:`/images/${i}/after.jpg`,
+            }
+        )
+    }
+    devRedirect = (
+        <Route exact path="/">
+                    <Redirect to="/graphic-portfolio" />
+        </Route>
     )
+} else {
+    for (let i = 1; i <= numberOfSamples; i++) {
+        portfolioSamples.push(
+            {
+                before:`/graphic-portfolio/images/${i}/before.jpg`,
+                after:`/graphic-portfolio/images/${i}/after.jpg`,
+            }
+        )
+    }
 }
 
 // App component
@@ -28,10 +46,11 @@ export default () => {
     <div className={styles.global} >
         <Header />
              <BrowserRouter >
+                {devRedirect ? devRedirect : null}
                 <Route exact path="/graphic-portfolio/">
                     <PreviewList images={portfolioSamples} />
                 </Route>
-                <Route exact path="/:id">
+                <Route exact path="/graphic-portfolio/:id">
                     <View />
                 </Route>
             </BrowserRouter>

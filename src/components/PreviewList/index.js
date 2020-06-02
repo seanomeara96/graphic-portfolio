@@ -4,18 +4,17 @@ import Preview from "../Preview";
 
 // Preview-List component
 export default props => {
-    console.log(props)
     let previews = []
     props.images.forEach(element => {
+        console.log(element)
         previews.push(
             <Preview 
             before={element.before} 
             after={element.after} 
-            key={Math.random()} 
+            key={previews.length} 
             />
         )
     });
-    console.log("previews array", previews);
     return (
         <div className={styles.container} >
             {previews}

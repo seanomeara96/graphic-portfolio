@@ -28,7 +28,7 @@ export default () => {
     <div className={styles.global} >
         <Header />
              <BrowserRouter >
-                <Route exact path="/">
+                <Route exact path="/graphic-portfolio/">
                     <PreviewList images={portfolioSamples} />
                 </Route>
                 <Route exact path="/:id">

@@ -11,6 +11,10 @@
     font-weight:700;
     text-decoration:none;
 }
+.button:hover {
+    transform: translateY(-1px);
+    transition:.3s;
+}
 .buttonContainer {
     height:100%;
     display:flex;

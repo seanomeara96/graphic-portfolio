@@ -1,19 +1,24 @@
 import React from "react";
 import styles from "./PreviewList.module.css";
 import Preview from "../Preview";
-/*
-* Needs a for loop.
-* Image URLS should be passed from main App component.
-*/
+
 // Preview-List component
 export default props => {
+    console.log(props)
+    let previews = []
+    props.images.forEach(element => {
+        previews.push(
+            <Preview 
+            before={element.before} 
+            after={element.after} 
+            key={Math.random()} 
+            />
+        )
+    });
+    console.log("previews array", previews);
     return (
         <div className={styles.container} >
-            <Preview />
-            <Preview />
-            <Preview />
-            <Preview />
-            <Preview />
+            {previews}
         </div>
     );
 }

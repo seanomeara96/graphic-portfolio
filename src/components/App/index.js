@@ -10,6 +10,18 @@ import View from "../View";
 * Need to change router type to be able to history.push("/")
   rather than just linking to the home screen.
 */
+// Images
+const numberOfSamples = 7;
+let portfolioSamples = [];
+for (let i = 1; i <= numberOfSamples; i++) {
+    portfolioSamples.push(
+        {
+            before:`/images/${i}/before.jpg`,
+            after:`/images/${i}/after.jpg`,
+        }
+    )
+}
+
 // App component
 export default () => {
     return (
@@ -17,7 +29,7 @@ export default () => {
         <Header />
              <BrowserRouter >
                 <Route exact path="/">
-                    <PreviewList />
+                    <PreviewList images={portfolioSamples} />
                 </Route>
                 <Route exact path="/:id">
                     <View />

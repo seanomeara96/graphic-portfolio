@@ -2,6 +2,7 @@
     position:relative;
   }
   .card {
+    overflow:hidden;
     display:inline-block;
     height:300px;
     width:175px;
@@ -15,4 +16,11 @@
     top:0;
     left:0;
     transform: rotate(15deg);
+  }
+  .image {
+    position:relative;
+    height:100%;
+    width:100%;
+    object-position: center;
+    object-fit: cover;
   }

@@ -1,6 +1,6 @@
 import React from "react";
 import { BrowserRouter, Route, Redirect } from "react-router-dom";
-import styles from "./App.module.css";
+import { global } from "./App.module.css";
 import Header from "../Header";
 import Footer from "../Footer";
 import PreviewList from "../PreviewList";
@@ -13,8 +13,7 @@ import View from "../View";
 // Images
 const numberOfSamples = 7;
 let portfolioSamples = [];
-console.log(document)
-let devRedirect
+let devRedirect = null;
 if (document.domain === "localhost") {
     for (let i = 1; i <= numberOfSamples; i++) {
         portfolioSamples.push(
@@ -43,16 +42,18 @@ if (document.domain === "localhost") {
 // App component
 export default () => {
     return (
-    <div className={styles.global} >
+    <div className={global} >
         <Header />
              <BrowserRouter >
-                {devRedirect ? devRedirect : null}
+                {devRedirect}
                 <Route exact path="/graphic-portfolio/">
                     <PreviewList images={portfolioSamples} />
                 </Route>
-                <Route exact path="/graphic-portfolio/:id">
-                    <View />
-                </Route>
+                <Route 
+                    exact 
+                    path="/graphic-portfolio/:id" 
+                    render={props => <View images={portfolioSamples} {...props} />} 
+                />
             </BrowserRouter>
         <Footer />
     </div>

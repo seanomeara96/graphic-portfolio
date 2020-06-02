@@ -11,7 +11,7 @@ export default props => {
             before={element.before} 
             after={element.after} 
             key={previews.length}
-            id={previews.length + 1} 
+            id={previews.length} 
             />
         )
     });

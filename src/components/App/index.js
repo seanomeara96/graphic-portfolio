@@ -16,8 +16,8 @@ let portfolioSamples = [];
 for (let i = 1; i <= numberOfSamples; i++) {
     portfolioSamples.push(
         {
-            before:`/images/${i}/before.jpg`,
-            after:`/images/${i}/after.jpg`,
+            before:`/graphic-portfolio/images/${i}/before.jpg`,
+            after:`/graphic-portfolio/images/${i}/after.jpg`,
         }
     )
 }

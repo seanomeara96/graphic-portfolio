@@ -6,8 +6,7 @@ import {container, card, back, image, front} from "./Preview.module.css";
 export default ({before, after}) => {
     return (
         <Link to="/other" className={container}>
-            <div 
-            className={`${card} ${back}`} >
+            <div className={`${card} ${back}`} >
                 <img className={image} src={after} alt={`photoshop`}></img>
             </div>
             <div className={`${card} ${front}`} >

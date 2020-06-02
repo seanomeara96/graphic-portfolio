@@ -6,7 +6,6 @@ import Preview from "../Preview";
 export default props => {
     let previews = []
     props.images.forEach(element => {
-        console.log(element)
         previews.push(
             <Preview 
             before={element.before} 

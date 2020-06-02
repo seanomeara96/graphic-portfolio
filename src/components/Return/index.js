@@ -6,5 +6,8 @@ import styles from "./Return.module.css";
 
 // Return Button
 export default () => {
-    return <Link className={styles.button} to="/" >Go Back!</Link>
+    return (
+        <div className={styles.buttonContainer} >
+            <Link className={styles.button} to="/" >Go Back!</Link>
+        </div>);
 };

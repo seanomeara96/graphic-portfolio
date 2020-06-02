@@ -10,7 +10,8 @@ export default props => {
             <Preview 
             before={element.before} 
             after={element.after} 
-            key={previews.length} 
+            key={previews.length}
+            id={previews.length + 1} 
             />
         )
     });

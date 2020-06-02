@@ -3,9 +3,9 @@ import { Link } from "react-router-dom";
 import {container, card, back, image, front} from "./Preview.module.css";
 
 // Preview component
-export default ({before, after}) => {
+export default ({before, after, id}) => {
     return (
-        <Link to="/other" className={container}>
+        <Link to={`/graphic-portfolio/${id}`} className={container}>
             <div className={`${card} ${back}`} >
                 <img className={image} src={after} alt={`photoshop`}></img>
             </div>

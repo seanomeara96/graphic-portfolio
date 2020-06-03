@@ -8,6 +8,6 @@ import styles from "./Return.module.css";
 export default () => {
     return (
         <div className={styles.buttonContainer} >
-            <Link className={styles.button} to="/" >Go Back</Link>
+            <Link className={styles.button} to="/graphic-portfolio" >Go Back</Link>
         </div>);
 };

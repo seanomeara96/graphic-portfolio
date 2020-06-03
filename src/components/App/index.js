@@ -18,7 +18,7 @@ if (document.domain === "localhost") {
     for (let i = 1; i <= numberOfSamples; i++) {
         portfolioSamples.push(
             {
-                before:`/images/${i}/before.jpg`,
+                before:`../images/${i}/before.jpg`,
                 after:`/images/${i}/after.jpg`,
             }
         )
@@ -41,6 +41,8 @@ if (document.domain === "localhost") {
 
 // App component
 export default () => {
+    console.log(document);
+    console.log(portfolioSamples)
     return (
     <div className={global} >
         <Header />

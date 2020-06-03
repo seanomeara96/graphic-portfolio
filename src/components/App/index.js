@@ -32,8 +32,6 @@ for (let i = 1; i <= numberOfSamples; i++) {
 
 // App component
 export default () => {
-    console.log(document);
-    console.log(portfolioSamples)
     return (
     <div className={global} >
         <Header />

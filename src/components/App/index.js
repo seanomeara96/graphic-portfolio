@@ -15,28 +15,19 @@ const numberOfSamples = 7;
 let portfolioSamples = [];
 let devRedirect = null;
 if (document.domain === "localhost") {
-    for (let i = 1; i <= numberOfSamples; i++) {
-        portfolioSamples.push(
-            {
-                before:`../images/${i}/before.jpg`,
-                after:`/images/${i}/after.jpg`,
-            }
-        )
-    }
     devRedirect = (
         <Route exact path="/">
                     <Redirect to="/graphic-portfolio" />
         </Route>
     )
-} else {
-    for (let i = 1; i <= numberOfSamples; i++) {
-        portfolioSamples.push(
-            {
-                before:`/graphic-portfolio/images/${i}/before.jpg`,
-                after:`/graphic-portfolio/images/${i}/after.jpg`,
-            }
-        )
-    }
+} 
+for (let i = 1; i <= numberOfSamples; i++) {
+    portfolioSamples.push(
+        {
+            before:`/graphic-portfolio/images/${i}/before.jpg`,
+            after:`/graphic-portfolio/images/${i}/after.jpg`,
+        }
+    )
 }
 
 // App component
